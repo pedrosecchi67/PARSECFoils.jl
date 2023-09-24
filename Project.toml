@@ -1,0 +1,14 @@
+name = "PARSECFoils"
+uuid = "f5c6b54d-b207-4da5-9bd6-4e8d7ec5df07"
+authors = ["pedro "]
+version = "0.1.0"
+
+[deps]
+Interpolations = "a98d9a8b-a2ab-59e6-89dd-64a1c18fca59"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Optim = "429524aa-4258-5aef-a3af-852621145aeb"
+
+[compat]
+julia = ">=1.6.0"
+Interpolations = ">=0.1.0"
+Optim = ">=1.5.0"
