@@ -322,8 +322,11 @@ module PARSECFoils
 
     """
     ```
-        function selig2parsec(
+        selig2parsec(
             x::AbstractVector, pts::AbstractMatrix;
+            kwargs...
+        ) = xty2parsec(
+            selig2xty(x, pts)...;
             kwargs...
         )
     ```
