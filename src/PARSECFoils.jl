@@ -230,10 +230,10 @@ module PARSECFoils
         xlow, ylow = x[ile:end], y[ile:end]
 
         upper = linear_interpolation(
-            xupp, yupp
+            xupp, yupp; extrapolation_bc = Linear(),
         )
         lower = linear_interpolation(
-            xlow, ylow
+            xlow, ylow; extrapolation_bc = Linear(),
         )
 
         yupp = upper.(xs)
