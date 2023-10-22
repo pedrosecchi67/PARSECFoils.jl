@@ -204,6 +204,19 @@ module PARSECFoils
     end
 
     """
+    Organize knots for linear interpolation
+    """
+    function _organize_knots(x::AbstractVector, y::AbstractVector)
+
+        asrt = sortperm(x)
+
+        (
+            x[asrt], y[asrt]
+        )
+
+    end
+
+    """
     ```
         function selig2xty(
             xs::AbstractVector, pts::AbstractMatrix
@@ -230,10 +243,10 @@ module PARSECFoils
         xlow, ylow = x[ile:end], y[ile:end]
 
         upper = linear_interpolation(
-            xupp, yupp; extrapolation_bc = Linear(),
+            _organize_knots(xupp, yupp)...; extrapolation_bc = Linear(),
         )
         lower = linear_interpolation(
-            xlow, ylow; extrapolation_bc = Linear(),
+            _organize_knots(xlow, ylow)...; extrapolation_bc = Linear(),
         )
 
         yupp = upper.(xs)
